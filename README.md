@@ -1,8 +1,12 @@
 # 👋 Hi, I'm Andrey
 
-Manual QA Engineer with 1+ year of commercial experience in Mobile Web, Android and Web testing.
+## Manual QA Engineer
 
-This repository contains examples of my QA documentation, testing artifacts and practical assignments that demonstrate my testing skills.
+Manual QA Engineer with over 1 year of commercial experience in Mobile Web, Android and Web application testing.
+
+I have experience in functional testing, regression testing, smoke testing, exploratory testing, bug reporting and test documentation.
+
+This repository contains examples of my QA documentation, testing materials and learning projects.
 
 ---
 
@@ -15,19 +19,21 @@ This repository contains examples of my QA documentation, testing artifacts and 
 - Mobile Web Testing
 - Android Testing
 - Web Testing
-- REST API Testing
-- SQL
 - Test Design
+- Bug Reporting
+- Test Documentation
+- Basic REST API Testing
+- Basic SQL
 
 ---
 
 # Tools
 
 - Jira
-- Postman
 - DevTools
+- Postman (learning)
+- SQL (learning)
 - Figma
-- SQL
 - GitHub
 
 ---
@@ -36,47 +42,54 @@ This repository contains examples of my QA documentation, testing artifacts and 
 
 📂 Bug Reports
 
-Examples of functional, UI and regression defects.
+Examples of bug reports and defect documentation.
 
 📂 Test Cases
 
-Test cases written for real features and learning projects.
+Examples of manual test cases.
 
 📂 Checklists
 
-Examples of structured testing checklists.
+Examples of testing checklists.
 
 📂 API Testing
 
-REST API testing using Postman.
+Examples of REST API testing using Postman.
 
 📂 SQL
 
-Examples of SQL queries used during testing.
+Examples of SQL queries created during learning and practice.
 
 ---
 
 # Currently Learning
 
-- REST API
+- REST API Testing
 - Mobile Testing
+- SQL
 - Python
 - Git
+- Test Automation
 
 ---
 
-All examples are created for educational and portfolio purposes and do not contain confidential information.
+# About this repository
 
----
+All examples are created for educational and portfolio purposes.
+
+No confidential information from commercial projects is included.
 
 
-# 👋 Привет!
 
-Меня зовут Андрей.
+# 👋 Привет, меня зовут Андрей
 
-Я Manual QA Engineer с более чем годом коммерческого опыта тестирования Mobile Web, Android и Web-приложений.
+## Manual QA Engineer
 
-В этом репозитории собраны примеры моей тестовой документации, практических заданий и рабочих артефактов, демонстрирующих мои навыки тестирования.
+Manual QA Engineer с более чем годом коммерческого опыта тестирования Mobile Web, Android и Web-приложений.
+
+Имею опыт функционального тестирования, регрессионного тестирования, Smoke-тестирования, исследовательского тестирования, создания баг-репортов и тестовой документации.
+
+В этом репозитории представлены примеры моей QA-документации, материалов по тестированию и учебных проектов.
 
 ---
 
@@ -87,46 +100,64 @@ All examples are created for educational and portfolio purposes and do not conta
 - Smoke-тестирование
 - Исследовательское тестирование
 - Тестирование Mobile Web
-- Тестирование Android
-- Тестирование Web
-- Тестирование REST API
-- SQL
+- Тестирование Android-приложений
+- Тестирование Web-приложений
 - Тест-дизайн
+- Создание баг-репортов
+- Создание тестовой документации
+- Базовое тестирование REST API
+- Базовые знания SQL
 
 ---
 
-# Используемые инструменты
+# Инструменты
 
 - Jira
-- Postman
 - DevTools
+- Postman (изучаю)
+- SQL (изучаю)
 - Figma
-- SQL
 - GitHub
 
 ---
 
 # Структура портфолио
 
-📂 Bug Reports — примеры баг-репортов.
+📂 Bug Reports
 
-📂 Test Cases — примеры тест-кейсов.
+Примеры баг-репортов и документации по дефектам.
 
-📂 Checklists — примеры чек-листов.
+📂 Test Cases
 
-📂 API Testing — примеры тестирования REST API.
+Примеры ручных тест-кейсов.
 
-📂 SQL — примеры SQL-запросов.
+📂 Checklists
+
+Примеры чек-листов для тестирования.
+
+📂 API Testing
+
+Примеры тестирования REST API с использованием Postman.
+
+📂 SQL
+
+Примеры SQL-запросов, созданных во время обучения и практики.
 
 ---
 
 # Сейчас изучаю
 
-- REST API
+- Тестирование REST API
 - Тестирование мобильных приложений
+- SQL
 - Python
 - Git
+- Автоматизацию тестирования
 
 ---
 
-Все материалы созданы исключительно для обучения и портфолио и не содержат конфиденциальной информации.
+# О репозитории
+
+Все примеры созданы исключительно для обучения и формирования портфолио.
+
+Конфиденциальная информация из коммерческих проектов отсутствует.
