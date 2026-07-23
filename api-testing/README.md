@@ -11,7 +11,6 @@ This folder contains examples of API testing using Postman and REST API.
 - DELETE Requests
 - Postman Collections
 - API Test Scenarios
-- API Automation Scripts
 
 ## Purpose
 
@@ -33,7 +32,6 @@ The examples demonstrate my understanding of REST API testing, request methods, 
 - DELETE-запросы
 - Коллекции Postman
 - Сценарии тестирования API
-- Скрипты автоматизации API
 
 ## Назначение
 
