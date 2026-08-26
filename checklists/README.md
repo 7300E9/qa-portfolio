@@ -1,42 +1,53 @@
 # Checklists
 
-This folder contains examples of QA checklists created for learning and portfolio purposes.
+This folder contains examples of QA checklists created for training and QA portfolio purposes.
 
 ## Contents
 
-- Authentication
-- Registration
-- User Profile
-- Product Catalog
-- Search
-- Shopping Cart
-- Checkout
-- Mobile Navigation
+1. `CL-001-registration.md` — User Registration Checklist
+2. `CL-002-shopping-cart.md` — Shopping Cart Checklist
 
 ## Purpose
 
-The checklists demonstrate my ability to organize testing, cover functional requirements, and quickly verify application behavior during smoke, regression, and exploratory testing.
+The checklists demonstrate my ability to:
 
-> All examples are created for educational and portfolio purposes and do not contain confidential information.
+* Organize functional testing
+* Cover positive and negative scenarios
+* Apply test design techniques
+* Verify validation rules
+* Check application state changes
+* Perform smoke, regression, and exploratory testing
 
+## About These Examples
+
+All checklists are based on fictional application scenarios and were created specifically for training and QA portfolio purposes.
+
+No confidential information from commercial projects is included.
+
+---
 
 # Чек-листы
 
-В этой папке представлены примеры QA-чек-листов, созданных для обучения и портфолио.
+В этой папке представлены примеры QA-чек-листов, созданных в учебных целях и для QA-портфолио.
 
 ## Содержание
 
-- Авторизация
-- Регистрация
-- Профиль пользователя
-- Каталог товаров
-- Поиск
-- Корзина
-- Оформление заказа
-- Навигация в мобильной версии
+1. `CL-001-registration.md` — Чек-лист регистрации пользователя
+2. `CL-002-shopping-cart.md` — Чек-лист корзины
 
 ## Назначение
 
-Эти чек-листы демонстрируют мое умение организовывать тестирование, покрывать функциональные требования и быстро проверять работу приложения во время Smoke-, Regression- и Exploratory-тестирования.
+Чек-листы демонстрируют мое умение:
 
-Все примеры созданы исключительно для обучения и портфолио и не содержат конфиденциальной информации.
+* Организовывать функциональное тестирование
+* Покрывать позитивные и негативные сценарии
+* Применять техники тест-дизайна
+* Проверять правила валидации
+* Проверять изменение и сохранение состояния приложения
+* Выполнять Smoke-, Regression- и Exploratory-тестирование
+
+## Об этих примерах
+
+Все чек-листы основаны на вымышленных сценариях работы приложения и созданы специально для обучения и QA-портфолио.
+
+Конфиденциальная информация из коммерческих проектов не используется.
