@@ -1,55 +1,55 @@
-# Bug Reports
+# Test Cases
 
-This folder contains examples of bug reports created for training and QA portfolio purposes.
+This folder contains examples of manual test cases created for training and QA portfolio purposes.
 
 ## Contents
 
-* Functional Bugs
-* Validation Bugs
-* Business Logic Bugs
-* State Management Bugs
-* UI Bugs
+- Positive Testing
+- Negative Testing
+- Validation Testing
+- Shopping Cart Testing
+- State Persistence Testing
 
-## Bug Reports
+## Test Cases
 
-1. `BUG-001-cart-total.md` — Incorrect cart total after adding the same product twice.
-2. `BUG-002-price-filter.md` — Product outside the selected price range is displayed in search results.
-3. `BUG-003-notification-toggle.md` — Notification setting is not preserved after reopening the section.
-4. `BUG-004-promo-recalculation.md` — Discount is not recalculated after changing product quantity.
-5. `BUG-005-invalid-email.md` — Registration succeeds with an invalid email address.
-6. `BUG-006-checkbox-delete.md` — Product with an unchecked checkbox is removed from the cart.
+1. `TC-001-valid-registration.md` — User registration with valid data.
+2. `TC-002-invalid-email.md` — User registration with an invalid Email.
+3. `TC-003-email-validation-recovery.md` — Email validation error disappears after correcting the value.
+4. `TC-004-add-product-to-cart.md` — Adding an available product to the cart.
+5. `TC-005-increase-product-quantity.md` — Increasing product quantity and recalculating the total price.
+6. `TC-006-notification-settings.md` — Saving notification settings after page refresh and reopening the section.
 
 ## About These Examples
 
-All bug reports are based on fictional application scenarios and were created specifically for training and QA portfolio purposes.
+All test cases are based on fictional application scenarios and were created specifically for training and QA portfolio purposes.
 
 No confidential information from commercial projects is included.
 
 ---
 
-# Баг-репорты
+# Тест-кейсы
 
-В этой папке представлены примеры баг-репортов, созданных в учебных целях и для QA-портфолио.
+В этой папке представлены примеры ручных тест-кейсов, созданных в учебных целях и для QA-портфолио.
 
 ## Содержание
 
-* Функциональные ошибки
-* Ошибки валидации
-* Ошибки бизнес-логики
-* Ошибки сохранения и изменения состояния
-* Ошибки пользовательского интерфейса
+- Позитивное тестирование
+- Негативное тестирование
+- Тестирование валидации
+- Тестирование корзины
+- Тестирование сохранения состояния
 
-## Баг-репорты
+## Тест-кейсы
 
-1. `BUG-001-cart-total.md` — Неверная итоговая стоимость при повторном добавлении одного и того же товара.
-2. `BUG-002-price-filter.md` — В результатах отображается товар за пределами выбранного диапазона цены.
-3. `BUG-003-notification-toggle.md` — Состояние настройки уведомлений не сохраняется после повторного открытия раздела.
-4. `BUG-004-promo-recalculation.md` — Скидка не пересчитывается после изменения количества товара.
-5. `BUG-005-invalid-email.md` — Регистрация выполняется с некорректным Email.
-6. `BUG-006-checkbox-delete.md` — Из корзины удаляется товар со снятым чекбоксом.
+1. `TC-001-valid-registration.md` — Регистрация пользователя с валидными данными.
+2. `TC-002-invalid-email.md` — Регистрация пользователя с некорректным Email.
+3. `TC-003-email-validation-recovery.md` — Исчезновение ошибки валидации после исправления Email.
+4. `TC-004-add-product-to-cart.md` — Добавление доступного товара в корзину.
+5. `TC-005-increase-product-quantity.md` — Увеличение количества товара и перерасчёт итоговой стоимости.
+6. `TC-006-notification-settings.md` — Сохранение настроек уведомлений после обновления страницы и повторного открытия раздела.
 
 ## Об этих примерах
 
-Все баг-репорты основаны на вымышленных сценариях работы приложения и созданы специально для обучения и QA-портфолио.
+Все тест-кейсы основаны на вымышленных сценариях работы приложения и созданы специально для обучения и QA-портфолио.
 
 Конфиденциальная информация из коммерческих проектов не используется.
