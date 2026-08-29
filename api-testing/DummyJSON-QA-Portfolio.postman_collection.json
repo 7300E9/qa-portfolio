@@ -1,0 +1,793 @@
+{
+  "info": {
+    "_postman_id": "a31812cc-5aeb-4af0-8122-932a59ccd368",
+    "name": "DummyJSON QA Portfolio",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37107875"
+  },
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "One product",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Код ответа равен 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"ID товара равен 1\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.id).to.eql(1);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Ответ содержит название товара\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response).to.have.property(\"title\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://dummyjson.com/products/1",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "products",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Non-existent product",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Код ответа равен 404\", function () {\r",
+                  "    pm.response.to.have.status(404);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Поле message существует\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response).to.have.property(\"message\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Сообщение об ошибке корректное\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.message).to.eql(\"Product with id '999999' not found\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Поле message является строкой\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.message).to.be.a(\"string\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://dummyjson.com/products/999999",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "products",
+                "999999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create product",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Код ответа равен 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Поле id существует\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response).to.have.property(\"id\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Поле id является числом\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.id).to.be.a(\"number\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Title соответствует\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.title).to.eql(\"QA Test Mouse\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Стоимость соответствует товару\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.price).to.eql(1500);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Category соответствует отправленным данным\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.category).to.eql(\"electronics\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"QA Test Mouse\",\r\n  \"price\": 1500,\r\n  \"category\": \"electronics\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://dummyjson.com/products/add",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "products",
+                "add"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update product title",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Код ответа равен 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"ID изменённого товара равен 1\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.id).to.have.eql(1);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Поле id является числом\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.id).to.be.a(\"number\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Title успешно изменился \", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.title).to.have.eql(\"testupdate\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"testupdate\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://dummyjson.com/products/1",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "products",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update product",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Код ответа равен 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"ID товара равен 1\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.id).to.eql(1);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Title соответствует отправленным данным\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.title).to.eql(\"testupdate2\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Price соответствует отправленным данным\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.price).to.eql(1555);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Поле price является числом\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.price).to.be.a(\"number\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"testupdate2\",\r\n    \"price\": 1555\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://dummyjson.com/products/1",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "products",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Код ответа равен 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Удалён товар с ID 1\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.id).to.eql(1);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Товар отмечен как удалённый\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.isDeleted).to.eql(true);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Поле deletedOn существует\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response).to.have.property(\"deletedOn\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://dummyjson.com/products/1",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "products",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login user",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Код ответа равен 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Поле accessToken существует\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response).to.have.property(\"accessToken\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Поле refreshToken существует\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response).to.have.property(\"refreshToken\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Username соответствует авторизованному пользователю\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.username).to.eql(\"emilys\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"accessToken является строкой\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.accessToken).to.be.a(\"string\");\r",
+                  "});\r",
+                  "\r",
+                  "const response = pm.response.json();\r",
+                  "\r",
+                  "pm.collectionVariables.set(\"accessToken\", response.accessToken);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"emilys\",\r\n  \"password\": \"emilyspass\",\r\n  \"expiresInMins\": 30\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://dummyjson.com/auth/login",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Me",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Код ответа равен 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"ID пользователя равен 1\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.id).to.eql(1);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Username равен emilys\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.username).to.eql(\"emilys\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Ответ содержит Email\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response).to.have.property(\"email\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://dummyjson.com/auth/me",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login invalid password",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Код ответа равен 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Поле message содержит текст 'Invalid credentials'\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.message).to.eql(\"Invalid credentials\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"message является строкой\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.message).to.be.a(\"string\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"emilys\",\r\n  \"password\": \"wrongpassword\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://dummyjson.com/auth/login",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login non-existent user",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Код ответа равен 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Поле message содержит текст 'Invalid credentials'\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.message).to.eql(\"Invalid credentials\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"message является строкой\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.message).to.be.a(\"string\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"andrey_not_exists_12345\",\r\n  \"password\": \"Qwerty123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://dummyjson.com/auth/login",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login not token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Код ответа равен 401\", function () {\r",
+                  "    pm.response.to.have.status(401);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Поле message содержит текст 'Access Token is required'\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.message).to.eql(\"Access Token is required\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"message является строкой\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.message).to.be.a(\"string\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://dummyjson.com/auth/me",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Me expired token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Код ответа равен 401\", function () {\r",
+                  "    pm.response.to.have.status(401);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Поле message содержит текст 'Token Expired!'\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.message).to.eql(\"Token Expired!\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"message является строкой\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.message).to.be.a(\"string\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3ODc5NDEwNDQsImV4cCI6MTc4Nzk0Mjg0NH0.RsgjktIEDU8JSntcXL5qb7moX7NnZ_6cb5zXzmO3z0k",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://dummyjson.com/auth/me",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Me invalid token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Код ответа равен 401\", function () {\r",
+                  "    pm.response.to.have.status(401);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Поле message содержит текст 'Invalid/Expired Token!'\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.message).to.eql(\"Invalid/Expired Token!\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"message является строкой\", function () {\r",
+                  "    const response = pm.response.json();\r",
+                  "    pm.expect(response.message).to.be.a(\"string\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer invalid_token_12345",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://dummyjson.com/auth/me",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "accessToken",
+      "value": ""
+    }
+  ]
+}
